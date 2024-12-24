@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Multi-Prompt Workflow Demo</title>
+</head>
+<body>
+    <h1>Content Transformation Pipeline</h1>
+    <form method="POST">
+        <label for="input_text">Enter your text:</label><br>
+        <textarea name="input_text" rows="8" cols="80">{{ input_text or "" }}</textarea><br><br>
+        
+        <label for="requested_style">Choose Style:</label><br>
+        <input type="text" name="requested_style" value="{{ requested_style or "Make it more casual" }}"><br><br>
+        
+        <input type="submit" value="Transform">
+    </form>
+
+    {% if summary %}
+        <h2>Summary:</h2>
+        <p>{{ summary }}</p>
+    {% endif %}
+    
+    {% if sentiment %}
+        <h2>Sentiment Analysis:</h2>
+        <p>{{ sentiment }}</p>
+    {% endif %}
+    
+    {% if final_text %}
+        <h2>Final Transformed Text:</h2>
+        <p>{{ final_text }}</p>
+    {% endif %}
+</body>
+</html>

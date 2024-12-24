@@ -1,0 +1,4 @@
+langchain==0.0.x
+openai==0.27.x
+flask==2.2.x  # or fastapi==0.95.x
+python-dotenv==0.21.x # if needed for env variables
